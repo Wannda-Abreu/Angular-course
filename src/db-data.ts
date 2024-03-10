@@ -1,5 +1,4 @@
 
-
 export const COURSES: any = [
 
     {
@@ -84,5 +83,5 @@ export const COURSES: any = [
 
 
 export function findCourseById(courseId:number) {
-    return COURSES.find(course => course.id === courseId);
+    return COURSES.find((course: { id: number; }) => course.id === courseId);
 }
