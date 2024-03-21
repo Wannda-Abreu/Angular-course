@@ -5,19 +5,15 @@
 
 </div>
 
-<div>
+<div>+
+ 
 <div class="courses">
 
-  @for (course of courses; track trackCourse; let count = $count) {
+  @for (course of courses; track course.id; let index = $index; let count = $count) {
 
    <course-card
     [course]= "course"
-    [index] = "$index"
-    [class.is-first] ="$first"
-    [class.is-last] ="$last"
-    [class.is-even] ="$even"
-    [class.is-odd] ="$odd"
-
+    [index] = "index"
     (courseSelected) ="onCourseSelected($event)" />
 
 }

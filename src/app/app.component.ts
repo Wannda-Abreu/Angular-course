@@ -15,10 +15,6 @@ export class AppComponent {
       console.log("App Component - click event bubled ..", course);
     }
 
-    trackCourse(index:number , course:Course) {
-      return course.id;
-    }
-
   }
 
 
