@@ -5,15 +5,28 @@
 
 </div>
 
-
+<div>
 <div class="courses">
 
+  @for (course of courses; track trackCourse; let count = $count) {
 
- <course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card>
+   <course-card
+    [course]= "course"
+    [index] = "$index"
+    [class.is-first] ="$first"
+    [class.is-last] ="$last"
+    [class.is-even] ="$even"
+    [class.is-odd] ="$odd"
 
- <course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"></course-card>
+    (courseSelected) ="onCourseSelected($event)" />
 
- <course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></course-card>
+}
+@empty {
+<h1> Not courses found</h1>1
+
+}
+
+   </div>
 
 </div>
 
